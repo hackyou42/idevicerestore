@@ -489,18 +489,7 @@ char* strsep(char** strp, const char* delim)
 #ifndef HAVE_REALPATH
 char* realpath(const char *filename, char *resolved_name)
 {
-#ifdef WIN32
-	if (access(filename, F_OK) != 0) {
-		return NULL;
-	}
-	if (GetFullPathName(filename, MAX_PATH, resolved_name, NULL) == 0) {
-		return NULL;
-	}
-	return resolved_name;
-#else
-#error please provide a realpath implementation for this platform
-	return NULL;
-#endif
+    return NULL;
 }
 #endif
 
