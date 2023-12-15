@@ -26,7 +26,7 @@
 
 #include "libimobiledevice-glue/ftab.h"
 #include "libimobiledevice-glue/common.h"
-#include "libimobiledevice-glue/endianness.h"
+#include "endianness.h"
 
 int ftab_parse(unsigned char *data, unsigned int data_size, ftab_t *ftab, uint32_t *tag)
 {
