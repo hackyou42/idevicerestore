@@ -49,7 +49,7 @@
 #include "libimobiledevice-glue/ipsw.h"
 #include "libimobiledevice-glue/restore.h"
 #include "libimobiledevice-glue/common.h"
-#include "libimobiledevice-glue/endianness.h"
+#include "endianness.h"
 
 #define CREATE_PARTITION_MAP          11
 #define CREATE_FILESYSTEM             12
