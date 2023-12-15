@@ -52,7 +52,7 @@
 #endif
 
 #include "libimobiledevice-glue/common.h"
-#include "libimobiledevice-glue/endianness.h"
+#include "endianness.h"
 
 #define MAX_PRINT_LEN 64*1024
 
