@@ -1,37 +1,27 @@
-# idevicerestore
+# libimobiledevice-glue
 
-*A command-line application to restore firmware files to iOS devices.*
+Library with common code used by the libraries and tools around the
+**libimobiledevice** project.
 
-![](https://github.com/libimobiledevice/idevicerestore/actions/workflows/build.yml/badge.svg)
+![](https://github.com/libimobiledevice/libimobiledevice-glue/workflows/build/badge.svg)
 
 ## Features
 
-The idevicerestore application is a full reimplementation of all granular steps
-which are performed during the restore of a firmware to a device.
+The main functionality provided by this library are **socket** helper
+functions and a platform independent **thread/mutex** implementation.
+Besides that it comes with a number of string, file, and plist helper
+functions, as well as some other commonly used code that was originally
+duplicated in the dedicated projects.
 
-In general, upgrades and downgrades are possible, however subject to
-availability of SHSH blobs from Apple for signing the firmware files.
+Test on Linux, macOS, Windows.
 
-Some key features are:
+## Projects using this library
 
-- **Restore:** Update firmware on iOS devices
-- **Firmware:** Use official IPSW firmware archive file or a directory as source
-- **Update:** Allows updating the device by default or erasing all data
-- **Download:** On demand download of latest available firmware for a device
-- **Cache:** Downloaded firmware files are cached locally
-- **Custom Firmware:** Restore custom firmware files *(requires bootrom exploit)*
-- **Baseband:** Allows you to skip NOR/Baseband upgrade
-- **SHSH:** Fetch TSS records and save them as ".shsh" files
-- **DFU:** Put devices in pwned DFU mode *(limera1n devices only)*
-- **AP Ticket:** Use custom AP ticket from a file
-- **Cross-Platform:** Tested on Linux, macOS, Windows and Android platforms
-- **History:** Developed since 2010
-
-**WARNING:** This tool can easily __destroy your user data__ irreversibly.
-
-Use with caution and make sure to backup your data before trying to restore.
-
-**In any case, usage is at your own risk.**
+- [libusbmuxd](https://github.com/libimobiledevice/libusbmuxd)
+- [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice)
+- [usbmuxd](https://github.com/libimobiledevice/usbmuxd)
+- [libirecovery](https://github.com/libimobiledevice/libirecovery)
+- [idevicerestore](https://github.com/libimobiledevice/idevicerestore)
 
 ## Installation / Getting started
 
@@ -47,35 +37,13 @@ sudo apt-get install \
 	autoconf \
 	automake \
 	libtool-bin \
-	libreadline-dev \
-	libusb-1.0-0-dev \
-	libplist-dev \
-	libimobiledevice-dev \
-	libimobiledevice-glue-dev \
-	libcurl4-openssl-dev \
-	libssl-dev \
-	libzip-dev \
-	zlib1g-dev
+	libplist-dev
 ```
 
-Then clone, build and install [libirecovery](https://github.com/libimobiledevice/libirecovery.git) which is not yet packaged:
+Then clone the actual project repository:
 ```shell
-git clone https://github.com/libimobiledevice/libirecovery.git
-cd libirecovery
-./autogen.sh
-make
-sudo make install
-cd ..
-```
-
-If the configure processes indicates old or missing libraries, your distribution
-might not have yet packaged the latest versions. In that case you will have to
-clone [these libraries](https://github.com/libimobiledevice/) separately and repeat the process in order to proceed.
-
-Continue with cloning the actual project repository:
-```shell
-git clone https://github.com/libimobiledevice/idevicerestore.git
-cd idevicerestore
+git clone https://github.com/libimobiledevice/libimobiledevice-glue.git
+cd libimobiledevice-glue
 ```
 
 Now you can build and install it:
@@ -85,45 +53,18 @@ make
 sudo make install
 ```
 
-**Important**
-
-idevicerestore requires a properly installed [usbmuxd](https://github.com/libimobiledevice/usbmuxd.git)
-for the restore procedure. Please make sure that it is either running or
-configured to be started automatically as soon as a device is detected
-in normal and/or restore mode. If properly installed this will be handled
-by udev/systemd.
+If you require a custom prefix or other option being passed to `./configure`
+you can pass them directly to `./autogen.sh` like this:
+```bash
+./autogen.sh --prefix=/opt/local
+make
+sudo make install
+```
 
 ## Usage
 
-The primary scenario is to restore a new firmware to a device.
-First of all attach your device to your machine.
-
-Then simply run:
-```shell
-idevicerestore --latest
-```
-
-This will print a selection of firmware versions that are currently being signed
-and can be restored to the attached device. It will then attempt to download and
-restore the selected firmware.
-
-By default, an update restore is performed which will preserve user data.
-
-Mind that if the firmware file does not contain a 'Customer Upgrade Install'
-variant, an erase restore will be performed.
-
-You can force restoring with erasing all data and basically resetting the device
-by using:
-```shell
-idevicerestore --erase --latest
-```
-
-Please consult the usage information or manual page for a full documentation of
-available command line options:
-```shell
-idevicerestore --help
-man idevicerestore
-```
+This library is directly used by libusbmuxd, libimobiledevice, etc., so there
+is no need to do anything in particular.
 
 ## Contributing
 
@@ -140,22 +81,19 @@ Please make sure your contribution adheres to:
 * Try to follow the code style of the project
 * Commit messages should describe the change well without being too short
 * Try to split larger changes into individual commits of a common domain
-* Use your real name and a valid email address for your commits
-
-We are still working on the guidelines so bear with us!
 
 ## Links
 
 * Homepage: https://libimobiledevice.org/
-* Repository: https://git.libimobiledevice.org/idevicerestore.git
-* Repository (Mirror): https://github.com/libimobiledevice/idevicerestore.git
-* Issue Tracker: https://github.com/libimobiledevice/idevicerestore/issues
+* Repository: https://git.libimobiledevice.org/libimobiledevice-glue.git
+* Repository (Mirror): https://github.com/libimobiledevice/libimobiledevice-glue.git
+* Issue Tracker: https://github.com/libimobiledevice/libimobiledevice-glue/issues
 * Mailing List: https://lists.libimobiledevice.org/mailman/listinfo/libimobiledevice-devel
 * Twitter: https://twitter.com/libimobiledev
 
 ## License
 
-This project is licensed under the [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html),
+This library and utilities are licensed under the [GNU Lesser General Public License v2.1](https://www.gnu.org/licenses/lgpl-2.1.en.html),
 also included in the repository in the `COPYING` file.
 
 ## Credits
@@ -163,7 +101,7 @@ also included in the repository in the `COPYING` file.
 Apple, iPhone, iPad, iPod, iPod Touch, Apple TV, Apple Watch, Mac, iOS,
 iPadOS, tvOS, watchOS, and macOS are trademarks of Apple Inc.
 
-This project is an independent software application and has not been
-authorized, sponsored, or otherwise approved by Apple Inc.
+This project is an independent software and has not been authorized, sponsored,
+or otherwise approved by Apple Inc.
 
 README Updated on: 2022-04-04
