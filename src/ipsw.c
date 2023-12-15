@@ -37,7 +37,7 @@
 #ifdef HAVE_OPENSSL
 #include <openssl/sha.h>
 #else
-#include "sha1.h"
+#include "libimobiledevice-glue/sha1.h"
 #define SHA_CTX SHA1_CTX
 #define SHA1_Init SHA1Init
 #define SHA1_Update SHA1Update
@@ -47,11 +47,11 @@
 #include <libimobiledevice-glue/termcolors.h>
 #include <plist/plist.h>
 
-#include "ipsw.h"
-#include "locking.h"
-#include "download.h"
-#include "common.h"
-#include "idevicerestore.h"
+#include "libimobiledevice-glue/ipsw.h"
+#include "libimobiledevice-glue/locking.h"
+#include "libimobiledevice-glue/download.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/idevicerestore.h"
 
 #define BUFSIZE 0x100000
 

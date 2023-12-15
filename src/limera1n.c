@@ -26,9 +26,9 @@
 #include <stdlib.h>
 #include <libirecovery.h>
 
-#include "common.h"
-#include "limera1n.h"
-#include "limera1n_payload.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/limera1n.h"
+#include "libimobiledevice-glue/limera1n_payload.h"
 
 int limera1n_is_supported(struct irecv_device *device)
 {

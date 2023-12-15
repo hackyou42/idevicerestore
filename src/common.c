@@ -51,8 +51,8 @@
 #include <termios.h>
 #endif
 
-#include "common.h"
-#include "endianness.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/endianness.h"
 
 #define MAX_PRINT_LEN 64*1024
 

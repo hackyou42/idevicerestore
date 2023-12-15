@@ -29,11 +29,11 @@
 #include <libimobiledevice/restore.h>
 #include <libimobiledevice/libimobiledevice.h>
 
-#include "idevicerestore.h"
-#include "tss.h"
-#include "img3.h"
-#include "restore.h"
-#include "recovery.h"
+#include "libimobiledevice-glue/idevicerestore.h"
+#include "libimobiledevice-glue/tss.h"
+#include "libimobiledevice-glue/img3.h"
+#include "libimobiledevice-glue/restore.h"
+#include "libimobiledevice-glue/recovery.h"
 
 static int recovery_progress_callback(irecv_client_t client, const irecv_event_t* event)
 {

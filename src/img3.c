@@ -25,9 +25,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "img3.h"
-#include "common.h"
-#include "idevicerestore.h"
+#include "libimobiledevice-glue/img3.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/idevicerestore.h"
 
 static void img3_free(img3_file* image);
 static img3_element* img3_parse_element(const unsigned char* data);

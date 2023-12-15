@@ -24,8 +24,8 @@
 #include <errno.h>
 #endif
 
-#include "locking.h"
-#include "common.h"
+#include "libimobiledevice-glue/locking.h"
+#include "libimobiledevice-glue/common.h"
 
 int lock_file(const char* filename, lock_info_t* lockinfo)
 {

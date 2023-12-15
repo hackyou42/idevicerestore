@@ -39,17 +39,17 @@
 #include <zip.h>
 #include <libirecovery.h>
 
-#include "idevicerestore.h"
-#include "asr.h"
-#include "fdr.h"
-#include "fls.h"
-#include "mbn.h"
-#include "ftab.h"
-#include "tss.h"
-#include "ipsw.h"
-#include "restore.h"
-#include "common.h"
-#include "endianness.h"
+#include "libimobiledevice-glue/idevicerestore.h"
+#include "libimobiledevice-glue/asr.h"
+#include "libimobiledevice-glue/fdr.h"
+#include "libimobiledevice-glue/fls.h"
+#include "libimobiledevice-glue/mbn.h"
+#include "libimobiledevice-glue/ftab.h"
+#include "libimobiledevice-glue/tss.h"
+#include "libimobiledevice-glue/ipsw.h"
+#include "libimobiledevice-glue/restore.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/endianness.h"
 
 #define CREATE_PARTITION_MAP          11
 #define CREATE_FILESYSTEM             12

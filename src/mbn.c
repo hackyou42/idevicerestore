@@ -22,8 +22,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "mbn.h"
-#include "common.h"
+#include "libimobiledevice-glue/mbn.h"
+#include "libimobiledevice-glue/common.h"
 
 mbn_file* mbn_parse(unsigned char* data, unsigned int size)
 {

@@ -28,10 +28,10 @@
 #include <curl/curl.h>
 #include <plist/plist.h>
 
-#include "tss.h"
-#include "img3.h"
-#include "common.h"
-#include "idevicerestore.h"
+#include "libimobiledevice-glue/tss.h"
+#include "libimobiledevice-glue/img3.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/idevicerestore.h"
 
 #include "endianness.h"
 

@@ -24,8 +24,8 @@
 #include <string.h>
 #include <curl/curl.h>
 
-#include "download.h"
-#include "common.h"
+#include "libimobiledevice-glue/download.h"
+#include "libimobiledevice-glue/common.h"
 
 typedef struct {
 	int length;

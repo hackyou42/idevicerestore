@@ -27,11 +27,11 @@
 #include <unistd.h>
 #include <libirecovery.h>
 
-#include "dfu.h"
-#include "tss.h"
-#include "recovery.h"
-#include "idevicerestore.h"
-#include "common.h"
+#include "libimobiledevice-glue/dfu.h"
+#include "libimobiledevice-glue/tss.h"
+#include "libimobiledevice-glue/recovery.h"
+#include "libimobiledevice-glue/idevicerestore.h"
+#include "libimobiledevice-glue/common.h"
 
 static int dfu_progress_callback(irecv_client_t client, const irecv_event_t* event) {
 	if (event->type == IRECV_PROGRESS) {

@@ -21,8 +21,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "fls.h"
-#include "common.h"
+#include "libimobiledevice-glue/fls.h"
+#include "libimobiledevice-glue/common.h"
 
 #ifndef offsetof
 #define offsetof(type, member)  __builtin_offsetof (type, member)

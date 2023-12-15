@@ -22,9 +22,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "common.h"
-#include "img4.h"
-#include "tss.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/img4.h"
+#include "libimobiledevice-glue/tss.h"
 
 #define ASN1_PRIVATE 0xc0
 #define ASN1_PRIMITIVE_TAG 0x1f

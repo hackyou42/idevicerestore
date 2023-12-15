@@ -33,17 +33,17 @@
 #ifdef HAVE_OPENSSL
 #include <openssl/sha.h>
 #else
-#include "sha1.h"
+#include "libimobiledevice-glue/sha1.h"
 #define SHA_CTX SHA1_CTX
 #define SHA1_Init SHA1Init
 #define SHA1_Update SHA1Update
 #define SHA1_Final SHA1Final
 #endif
 
-#include "asr.h"
-#include "idevicerestore.h"
-#include "common.h"
-#include "ipsw.h"
+#include "libimobiledevice-glue/asr.h"
+#include "libimobiledevice-glue/idevicerestore.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/ipsw.h"
 
 #define ASR_VERSION 1
 #define ASR_STREAM_ID 1

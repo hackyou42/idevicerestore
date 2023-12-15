@@ -41,27 +41,27 @@
 #ifdef HAVE_OPENSSL
 #include <openssl/sha.h>
 #else
-#include "sha512.h"
+#include "libimobiledevice-glue/sha512.h"
 #define SHA384 sha384
 #endif
 
 #include <libimobiledevice-glue/utils.h>
 
-#include "dfu.h"
-#include "tss.h"
-#include "img3.h"
-#include "img4.h"
-#include "ipsw.h"
-#include "common.h"
-#include "normal.h"
-#include "restore.h"
-#include "download.h"
-#include "recovery.h"
-#include "idevicerestore.h"
+#include "libimobiledevice-glue/dfu.h"
+#include "libimobiledevice-glue/tss.h"
+#include "libimobiledevice-glue/img3.h"
+#include "libimobiledevice-glue/img4.h"
+#include "libimobiledevice-glue/ipsw.h"
+#include "libimobiledevice-glue/common.h"
+#include "libimobiledevice-glue/normal.h"
+#include "libimobiledevice-glue/restore.h"
+#include "libimobiledevice-glue/download.h"
+#include "libimobiledevice-glue/recovery.h"
+#include "libimobiledevice-glue/idevicerestore.h"
 
-#include "limera1n.h"
+#include "libimobiledevice-glue/limera1n.h"
 
-#include "locking.h"
+#include "libimobiledevice-glue/locking.h"
 
 #define VERSION_XML "version.xml"
 
